@@ -46,13 +46,12 @@ export default function Game() {
 
 function Board({ xIsNext, squares, onPlay }) {
   function handleClick(i) {
-    if(squares[i] || calculateWinner(squares))
-    {
+    if(squares[i] || calculateWinner(squares)){
       return;
     }
     const nextSquares = squares.slice();
-    if(xIsNext)
-    {
+
+    if(xIsNext){
       nextSquares[i] = "X";
     }
     else{
@@ -119,3 +118,5 @@ function Square({value, onSquareClick}) {
     </button>
   );
 }
+
+//sorry somehow missed the delcare winner commit
