@@ -1,16 +1,18 @@
+
+
 version: "3"
 services:
   client:
     build: .
     # ports:
-    #   - 3006:80
-    
+    # - 0.0.0.0:3011:80
+
   swag:
     image: lscr.io/linuxserver/swag
     cap_add:
       - NET_ADMIN
     env_file:
-      - .env
+    - .env
     environment:
       - PUID=1000
       - PGID=1000
@@ -20,6 +22,7 @@ services:
       - STAGING=false
     volumes:
       - /home/breanna/data/swag:/config
+      - ./default.conf:/config/nginx/site-confs/default.conf # new part
     ports:
-    - 0.0.0.0:3006:443
+    - 0.0.0.0:3006:443 # note using port 443
     restart: unless-stopped
