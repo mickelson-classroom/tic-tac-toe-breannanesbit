@@ -7,7 +7,6 @@ services:
     
   swag:
     image: lscr.io/linuxserver/swag
-    container_name: swag
     cap_add:
       - NET_ADMIN
     environment:
@@ -16,10 +15,9 @@ services:
       - TZ=America/Denver
       - URL=reactdemo.duckdns.org
       - VALIDATION=duckdns
-    
       - STAGING=true 
     volumes:
-      - /home/alex/data/swag:/config
+      - /home/breanna/data/swag:/config
     ports:
     - 3006:80
     restart: unless-stopped
