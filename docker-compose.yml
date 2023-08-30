@@ -9,15 +9,17 @@ services:
     image: lscr.io/linuxserver/swag
     cap_add:
       - NET_ADMIN
+    env_file:
+      - .env
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=America/Denver
-      - URL=reactdemo.duckdns.org
+      - URL=snowttt.duckdns.org
       - VALIDATION=duckdns
-      - STAGING=true 
+      - STAGING=false
     volumes:
       - /home/breanna/data/swag:/config
     ports:
-    - 3006:80
+    - 3006:443
     restart: unless-stopped
