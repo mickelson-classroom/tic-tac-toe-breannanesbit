@@ -21,5 +21,5 @@ services:
     volumes:
       - /home/breanna/data/swag:/config
     ports:
-    - 3006:443
+    - 0.0.0.0:3006:443
     restart: unless-stopped
